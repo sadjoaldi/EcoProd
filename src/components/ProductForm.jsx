@@ -8,7 +8,7 @@ function ProductForm({ onAddProduct }) {
     price: 0,
   });
 
-  const handleAddProduct = (e) => {
+  const handlAddPro = (e) => {
     // console.log(e.target);
     const { name, value } = e.target;
     setProduct((prevProduct) => ({
@@ -33,21 +33,21 @@ function ProductForm({ onAddProduct }) {
           type="text"
           name="name"
           value={product.name}
-          onChange={handleAddProduct}
+          onChange={handlAddPro}
         />
         <label htmlFor="description">description</label>
         <input
           type="text"
           name="description"
           value={product.description}
-          onChange={handleAddProduct}
+          onChange={handlAddPro}
         />
         <label htmlFor="price">price</label>
         <input
           type="number"
           name="price"
           value={product.price}
-          onChange={handleAddProduct}
+          onChange={handlAddPro}
         />
         <button type="submit">Add product</button>
       </form>
