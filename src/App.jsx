@@ -1,5 +1,12 @@
+import ProductList from "./components/ProductList";
+
 function App() {
-  return <>je suis app</>;
+  return (
+    <>
+      {" "}
+      <ProductList />
+    </>
+  );
 }
 
 export default App;

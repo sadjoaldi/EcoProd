@@ -1,9 +1,11 @@
-import ProductList from "./ProductList";
+import "../styles/Product.css";
 
-function Product() {
+function Product({ name, description, price }) {
   return (
     <div>
-      <ProductList />
+      <h1>{name}</h1>
+      <p>{description} </p>
+      <span>{price} </span>
     </div>
   );
 }
