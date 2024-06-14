@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useRef, useState } from "react";
+import "../styles/ProductForm.css";
 
 function ProductForm({ onAddProduct }) {
   const [product, setProduct] = useState({
@@ -7,6 +8,10 @@ function ProductForm({ onAddProduct }) {
     description: "",
     price: 0,
   });
+
+  const nameRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const priceRef = useRef(null);
 
   const handlAddPro = (e) => {
     // console.log(e.target);
@@ -31,6 +36,7 @@ function ProductForm({ onAddProduct }) {
         <label htmlFor="name">name</label>
         <input
           type="text"
+          ref={nameRef}
           name="name"
           value={product.name}
           onChange={handlAddPro}
@@ -38,6 +44,7 @@ function ProductForm({ onAddProduct }) {
         <label htmlFor="description">description</label>
         <input
           type="text"
+          ref={descriptionRef}
           name="description"
           value={product.description}
           onChange={handlAddPro}
@@ -45,11 +52,12 @@ function ProductForm({ onAddProduct }) {
         <label htmlFor="price">price</label>
         <input
           type="number"
+          ref={priceRef}
           name="price"
           value={product.price}
           onChange={handlAddPro}
         />
-        <button type="submit">Add product</button>
+        <button type="submit">Ajouter le produit</button>
       </form>
     </>
   );

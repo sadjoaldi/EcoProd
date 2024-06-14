@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/ProductList.css";
 import Product from "./Product";
 import ProductForm from "./ProductForm";
 
@@ -22,16 +23,18 @@ function ProductList() {
 
   return (
     <>
-      {" "}
-      {products.map((product, index) => (
-        <Product
-          key={index}
-          name={product.name}
-          description={product.description}
-          price={product.price}
-        />
-      ))}
-      <ProductForm onAddProduct={handleAddProduct} />
+      <section className="prodList">
+        {" "}
+        {products.map((product, index) => (
+          <Product
+            key={index}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+          />
+        ))}
+        <ProductForm onAddProduct={handleAddProduct} />
+      </section>
     </>
   );
 }
