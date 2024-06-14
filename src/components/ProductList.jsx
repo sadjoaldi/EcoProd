@@ -1,7 +1,14 @@
+import { useState } from "react";
 import Product from "./Product";
 import ProductForm from "./ProductForm";
 
-function ProductList({ products }) {
+function ProductList() {
+  const [products, setProducts] = useState([]);
+
+  const handleAddProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
+
   return (
     <>
       {" "}
@@ -13,7 +20,7 @@ function ProductList({ products }) {
           price={product.price}
         />
       ))}
-      <ProductForm />
+      <ProductForm onAddProduct={handleAddProduct} />
     </>
   );
 }
